@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />  
+    <title>PhoneGap Device Ready Example</title>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="orientationLock.js"></script> 
+    <script type="text/javascript">
+   		//window.location.href = "http://www.smashingmagazine.com/";
+   		//window.location.href = "http://www.freshmail.sk/";
+	};
+   	</script>
+ 	
+    <style>
+	    body {
+	    	margin: 0;
+		}
+		
+		#loadimg
+		{
+		    position:absolute;
+		    width:592px; /*image width */
+		    height:512px; /*image height */
+		    left:50%; 
+		    top:50%;
+		    margin-left:-296px; /*image width/2 */
+		    margin-top:-256px; /*image height/2 */
+		}		
+    </style>
+
+       
+  </head>
+  <body >
+
+  	<!--<img id="loadimg" src="img/win8-loader.gif"/>-->
+  	<iframe src="" style="border: 0; width: 100%; height: 100%; display:none;">Your browser doesn't support iFrames.</iframe>
+  	
+   <script type="text/javascript">
+   
+		function callNativePlugin( returnSuccess ) { 
+		    HelloPlugin.callNativeFunction( nativePluginResultHandler, nativePluginErrorHandler, returnSuccess ); 
+		} 
+		function nativePluginResultHandler (result) { 
+		   alert("SUCCESS: \r\n"+result ); 
+		} 
+		function nativePluginErrorHandler (error) { 
+		   alert("ERROR: \r\n"+error ); 
+		}    
+   
+   /*
+   $(function () {
+   	window.location.href = "http://www.freshmail.sk/";
+   });
+   */
+	$(function () {
+	
+	  $("iframe").attr("src","http://apexway.midmarket.com.tw/");
+	  
+	  $("iframe").on("load", function () {
+		
+	  	//$("#loadimg").hide();
+	    $(this).show();
+	  	navigator.splashscreen.hide();
+	  	window.plugins.orientationLock.unlock()
+	  });
+	});
+	
+   </script>  	
+  </body>
+</html>

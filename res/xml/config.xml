@@ -33,9 +33,10 @@
     <access origin="*"/>
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
-    <content src="index.html" />
+    <content src="index3.html" />
 
     <preference name="loglevel" value="DEBUG" />
+
     <!--
       <preference name="splashscreen" value="resourceName" />
       <preference name="backgroundColor" value="0xFFF" />
@@ -101,6 +102,15 @@
     <feature name="InAppBrowser">
       <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
     </feature>
+	<feature name="SplashScreen">
+	    <param name="android-package" value="org.apache.cordova.SplashScreen" />
+	</feature>
+	<feature name="HelloPlugin">
+	    <param name="android-package" value="com.example.phonegap_demo.HelloPlugin" />
+	</feature>
+	<feature name="OrientationLock" >
+		<param name="android-package" value="com.plugin.phonegap.OrientationLock"/>
+	</feature>
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
     </plugins>
